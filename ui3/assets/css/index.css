@@ -1,0 +1,175 @@
+.container{
+  padding:0;
+  margin:0;
+}
+
+.card {
+  display: grid;
+  grid-template-areas: "text";
+  height: auto
+  /* to round the corners */
+  text-align: left;
+  position: relative;
+  background: white;
+  border: 1px solid #f7f7f7;
+  box-shadow: 0 8px 24px -12px rgba(0,0,0,.75);
+}
+
+.intro-text{
+  margin:4rem;
+  margin-bottom: 4rem;
+}
+
+.intro-heading{
+  font-size: 4em;
+  line-height: 1.2em;
+}
+
+h4{
+  font-size: 1.3em;
+}
+
+.carousel-quotes {
+  background-color:white;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.stories-heading{
+  font-size: 2em;
+  margin:2rem;
+  text-align:center;
+  color: black;
+  font-family: 'Handlee', cursive;
+}
+
+.method-heading{
+  font-size: 2em;
+  margin:2rem;
+  text-align:center;
+  color: black;
+}
+
+.quote-name {
+  text-align: left;
+}
+
+#slideshow {
+  overflow: hidden;
+  /* height: 510px;
+  width: 728px; */
+  height:20rem;
+  width:100%;
+  margin: 0 auto;
+}
+
+.slide-wrapper {
+  width: 2912px;
+  -webkit-animation: slide 18s ease infinite;
+}
+
+.slide {
+  float: left;
+  height: 510px;
+  width: 618px;
+  margin-left: 66px;
+  margin-right:25px;
+}
+
+.slide:nth-child(1) {
+  background: #D93B65;
+}
+
+.slide:nth-child(2) {
+  background: #037E8C;
+}
+
+.slide:nth-child(3) {
+  background: #36BF66;
+}
+
+.slide:nth-child(4) {
+  background: #D9D055;
+}
+
+.slide:nth-child(5) {
+  background: #A44EED;
+}
+
+.slide-text {
+  color: #000;
+  text-align: left;
+  font-size: 1.6em;
+  line-height: 1.5em;
+  font-weight:lighter;
+  padding: 3rem;
+  font-family: 'Handlee', cursive;
+}
+
+@-webkit-keyframes slide {
+  20% {margin-left: 0px;}
+  30% {margin-left: -728px;}
+  50% {margin-left: -728px;}
+  60% {margin-left: -1456px;}
+  70% {margin-left: -1456px;}
+  80% {margin-left: -2184px;}
+  90% {margin-left: -2184px;}
+}
+
+.steps{
+  margin-top: 4rem;
+}
+.steps-container {
+  display:flex;
+  padding-left: 16rem;
+  flex-direction: row;
+  margin:2rem;
+}
+
+.step-card {
+  display: inline-grid;
+  grid-template-areas: "text";
+  height: auto
+  /* to round the corners */
+  border-radius: 18px;
+  text-align: left;
+  position: relative;
+  padding: 1rem;
+  margin: 0.9rem;
+  background: white;
+  border: 1px solid #f7f7f7;
+  box-shadow: rgb(15, 12, 16) 0px 0px 3px 0px;
+}
+
+.step-num {
+  text-align: center;
+  color: #404044;
+  padding: 0.5rem;
+  margin:0;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  line-height: 2.4rem;
+}
+
+.step-name {
+  color: #484351;
+  text-align: center;
+  padding-top: 0;
+}
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width:50%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

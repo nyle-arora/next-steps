@@ -1,33 +1,7 @@
-var data = [];
-let request = new XMLHttpRequest();
-request.open("GET", "http://localhost:5000/", false);
-request.send();
-// request.onload = () => {
-//   console.log(request);
-//   if (request.status === 200) {
-//     console.log(JSON.parse(request.response));
-//   } else {
-//     console.log(`error ${request.status} ${request.statusText}`)
-//   }
-// }
-var data = JSON.parse(request.response);
-console.log(data);
-var task_input = {};
-for(let key in data) {
-  let val = data[key];
-  if(val in task_input) {
-    task_input[val].append(key);
-  }
-  else {
-    task_input[val] = [key];
-  }
-}
-console.log(task_input);
-
 var add_button = document.getElementById('add-button');
 var del_buttons = document.getElementsByClassName('delete');
 var task_container = document.querySelector('.tasks-container');
-
+var task_input = document.getElementById('new-task')
 var completeAll = document.getElementById('check-all-button');
 var clearComplete = document.getElementById('clearComplete');
 var showAll = document.getElementById('showAll');
@@ -38,13 +12,14 @@ var showState = 'showAll';
 showAll.style.color="Black";
 
 var task_card_string = "<div class=\"status-icon\"></div><p class=\"task-text\"><p class=\"task-status color-red\">Not-Started</p><ion-icon class=\"delete fs-large mg-10\" name=\"close-circle-outline\"></ion-icon>"
-var task_count = 4;
+var task_count = 5;
 updateTaskCount();
 eventSetter();
 
 function updateTaskCount(){
     document.getElementById('task-left-count').innerHTML = task_count;
 }
+
 function eventSetter(){
     var del_buttons = document.getElementsByClassName('delete');
     for(del of del_buttons){
@@ -67,6 +42,7 @@ function eventSetter(){
             cards[i].children[3].style.visibility="hidden";
         })
     }
+
 }
 
 function reassignIDs(){
@@ -84,7 +60,9 @@ function resetColor(){
         button.style.color = "gray";
 }
 
+
 add_button.addEventListener('click', function(){
+
 
     //Adding the new task in the task container
     var task_card = document.createElement('div');
@@ -93,8 +71,7 @@ add_button.addEventListener('click', function(){
     task_card.setAttribute("id", "t"+(++task_count));
     task_container.appendChild(task_card);
     let card_text = document.querySelector('#t' + task_count + " p");
-    let card_assignee = document.querySelector("p.task-status" + task_count);
-    card_text.innerHTML = task_input[0][0]
+    card_text.innerHTML = task_input.value;
     task_input.value = "";
 
     //Change Task Count
