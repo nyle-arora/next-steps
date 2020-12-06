@@ -3,6 +3,16 @@
   margin:0;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#bubble {
+  position: relative;
+  bottom: 50px;
+}
+
 .card {
   display: grid;
   grid-template-areas: "text";
